@@ -1,0 +1,18 @@
+services: 
+  db:
+    image: postgres@sha256:062b02051873a101837543675b5b4601cba06b1972d22f4b7969adbde5a280e4
+    shm_size: 128mb
+    ports: 
+      - 5432:5432
+    volumes: 
+      - .pgdata:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: 123
+
+  db-admin: 
+    image: dpage/pgadmin4:snapshot@sha256:2d44e7f47746f2dd401de930227f025a194f12596ccf60ef320a44bf4d5a6dde
+    ports:
+      - 5050:80
+    environment: 
+      PGADMIN_DEFAULT_EMAIL: raiz41455@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: 123

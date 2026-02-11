@@ -74,8 +74,12 @@ WSGI_APPLICATION = 'restframework.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'rest',
+        'USER': 'root', 
+        'PASSWORD': 123, 
+        'HOST': 'restframework-db-1', 
+        'port': 5432
     }
 }
 
